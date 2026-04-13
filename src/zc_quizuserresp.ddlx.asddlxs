@@ -1,0 +1,26 @@
+@Metadata.layer: #CORE
+annotate view ZC_QuizUserResp with
+{
+  /* This facet allows the child to have its own detail page if clicked */
+  @UI.facet: [ { id: 'idIdentification', type: #IDENTIFICATION_REFERENCE, position: 10 } ]
+
+  @UI: { lineItem:       [{ position: 10 }],
+         identification: [{ position: 10 }] }
+  @EndUserText.label: 'Question ID'
+  QuestionUuid;
+
+  @UI: { lineItem:       [{ position: 20 }],
+         identification: [{ position: 20 }] }
+  @EndUserText.label: 'User Answer'
+  SelectedOpt;
+
+  @UI: { lineItem:       [{ position: 30 }],
+         identification: [{ position: 30 }] }
+  @EndUserText.label: 'Is Correct?'
+  IsCorrect;
+
+  @UI: { lineItem:       [{ position: 40 }],
+         identification: [{ position: 40 }] }
+  @EndUserText.label: 'Difficulty Band'
+  DifficultyAtResp;
+}

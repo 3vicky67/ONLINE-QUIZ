@@ -1,0 +1,8 @@
+@EndUserText.label: 'Service Definition for Adaptive Quiz'
+define service ZSRV_QUIZ {
+  expose ZC_QuizSession   as QuizSession;
+  expose ZC_QuizUserResp  as UserResponse;
+  expose ZI_QuizTopic     as Topic;
+  expose ZI_QuizQuestion  as QuestionPool;
+  expose ZI_QuizAnswerOpt as AnswerOptions;
+}

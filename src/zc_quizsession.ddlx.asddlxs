@@ -1,0 +1,42 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { 
+    typeName: 'Quiz Session', 
+    typeNamePlural: 'Quiz Sessions', 
+    title: { type: #STANDARD, label: 'Session ID', value: 'SessionUuid' } 
+  }
+}
+annotate view ZC_QuizSession with
+{
+  @UI.facet: [
+    { id: 'idIdentification', type: #IDENTIFICATION_REFERENCE, label: 'General Information', position: 10 },
+    { id: 'idResponses', type: #LINEITEM_REFERENCE, label: 'Response HISTORY', position: 20, targetElement: '_Responses' }
+  ]
+
+  @UI: { lineItem:       [{ position: 10 }],
+         identification: [{ position: 10 }],
+         selectionField: [{ position: 10 }] }
+  @EndUserText.label: 'Session UUID'
+  SessionUuid;
+
+  @UI: { lineItem:       [{ position: 20 }],
+         identification: [{ position: 20 }],
+         selectionField: [{ position: 20 }] }
+  @EndUserText.label: 'Topic'
+  TopicId;
+
+  @UI: { lineItem:       [{ position: 30 }],
+         identification: [{ position: 30 }] }
+  @EndUserText.label: 'Status'
+  Status;
+
+  @UI: { lineItem:       [{ position: 40 }],
+         identification: [{ position: 40 }] }
+  @EndUserText.label: 'Difficulty Level'
+  CurrentBand;
+
+  @UI: { lineItem:       [{ position: 50 }],
+         identification: [{ position: 50 }] }
+  @EndUserText.label: 'Total Score'
+  TotalScore;
+}
